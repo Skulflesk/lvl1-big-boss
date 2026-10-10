@@ -6,7 +6,7 @@ var x = 500;
 var y = 250;
 var radius = 30;
 var xSpeed = 5;
-var ySpeed = 0;
+var ySpeed = 5;
 var ballColor = "pink";
 
 function drawBall()
@@ -16,7 +16,7 @@ function drawBall()
     context.beginPath();
     context.arc(x, y, radius, 0, 360 * Math.PI / 180, true);
 
-    context.fillStyle = "red";
+    context.fillStyle = ballColor;
     context.fill();
 
     
@@ -28,13 +28,13 @@ function drawBall()
     if (x + radius >= canvas.width)
     {
         x = canvas.width - radius;
-      xSpeed = -xSpeed
+      xSpeed = -xSpeed++
       ballColor = "blue";
     }
     if (x - radius <= 0)
     {
        x = radius;
-        xSpeed = -xSpeed;
+        xSpeed = -xSpeed++;
         ballColor = "red";
     }
 
