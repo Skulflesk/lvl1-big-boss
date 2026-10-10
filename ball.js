@@ -7,7 +7,7 @@ var y = 250;
 var radius = 30;
 var xSpeed = 5;
 var ySpeed = 5;
-var ballColor = "pink";
+var ballColor = "black";
 
 function drawBall()
 {
@@ -28,14 +28,30 @@ function drawBall()
     if (x + radius >= canvas.width)
     {
         x = canvas.width - radius;
-      xSpeed = -xSpeed++
+      xSpeed = -xSpeed
+      xSpeed = xSpeed* 1.1;
       ballColor = "blue";
     }
     if (x - radius <= 0)
     {
        x = radius;
-        xSpeed = -xSpeed++;
+        xSpeed = -xSpeed
+         xSpeed = xSpeed* 1.1;
         ballColor = "red";
+    }
+      if (y + radius >= canvas.height)
+    {
+        y = canvas.height - radius;
+      ySpeed = -ySpeed
+      ySpeed = ySpeed * 1.1;
+      ballColor = "yellow";
+    }
+    if (y - radius <= 0)
+    {
+       y = radius;
+        ySpeed = -ySpeed
+        ySpeed = ySpeed * 1.1;
+        ballColor = "green";
     }
 
 }
